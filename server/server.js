@@ -7,6 +7,11 @@ import db from "./db/db.js"; // Assicurati di avere il tuo database configurato 
 import apiRoutes from "./routes/api.js"; // Assicurati di avere le tue rotte API configurate correttamente
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Configura il database PostgreSQL
 try {
@@ -22,6 +27,11 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 app.use(
   cors({
     origin:
