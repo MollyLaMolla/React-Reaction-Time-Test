@@ -36,8 +36,7 @@ app.get("*", (req, res) => {
 app.use(
   cors({
     origin:
-      process.env.CLIENT_URL ||
-      "https://react-reaction-time-test-client.onrender.com",
+      process.env.CLIENT_URL || "https://react-reaction-time-test.onrender.com",
     credentials: true, // ← essenziale per i cookie!
   })
 );
@@ -120,7 +119,7 @@ app.get(
     });
 
     res.redirect(
-      `https://react-reaction-time-test-client.onrender.com/username/setup`
+      `https://react-reaction-time-test.onrender.com/username/setup`
     );
   }
 );
