@@ -1,0 +1,17 @@
+{
+  "name": "reaction-time-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server:dev": "cd server && nodemon index.js",
+    "client:dev": "cd client && npm start"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+# 🌐 Ignora dipendenze
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# 🏗️ Ignora build e dist
+build/
+dist/
+client/build/
+server/build/
+
+# 🔐 Ignora variabili ambientali
+.env
+
+# 🗂️ Ignora file di sistema e cache
+.DS_Store
+Thumbs.db
+
+# 🔎 Ignora log
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🧠 Ignora file editor
+.vscode/
+.idea/
+*.swp
+
+# 🧱 Ignora blocchi e backup
+*.bak
+*.tmp
+
+# 🧪 Ignora coverage se fai testing
+coverage/
+
+# 📝 Ignora lockfile se non lo usi
+package-lock.json
+yarn.lock

@@ -1,0 +1,129 @@
+.userbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.userbox-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1; /* 👈 evita disallineamenti verticali */
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.userbox-icon span {
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userbox-icon:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+}
+
+.userbox-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.userbox-dropdown.visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.userbox-dropdown h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.userbox-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.userbox-tag {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+}
+
+.userbox-dropdown p {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.userbox-dropdown button {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.userbox-dropdown button:hover {
+  background-color: #d32f2f;
+}
+
+.userbox-icon {
+  transition: transform 0.1s ease-in-out;
+}
+
+.userbox-icon.clicked {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
