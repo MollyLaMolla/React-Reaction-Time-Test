@@ -24,7 +24,8 @@ function UserBox({ user }) {
       if (res.ok) {
         // Rimuovi i dati dell'utente dallo stato
         console.log("Logout successful");
-        window.location.href = "http://localhost:3000"; // Reindirizza alla home
+        window.location.href =
+          "https://react-reaction-time-test-client.onrender.com/"; // Redirect to home after logout
       } else {
         console.error("Logout failed");
       }

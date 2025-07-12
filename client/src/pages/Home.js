@@ -37,7 +37,8 @@ function Home() {
 
   if (user !== null) {
     if (user.custom_name === null || user.icon === null) {
-      window.location.href = "http://localhost:3000/username/setup";
+      window.location.href =
+        "https://react-reaction-time-test-client.onrender.com/setup";
     }
   }
 
