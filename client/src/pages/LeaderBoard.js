@@ -22,12 +22,10 @@ function Leaderboard() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await fetch(
-          "https://react-reaction-time-test.onrender.com/api/me",
-          {
-            credentials: "include",
-          }
-        );
+        const res = await fetch("/api/me", {
+          credentials: "include",
+        });
+        if (!res.ok) throw new Error("Errore risposta API");
         const userData = await res.json();
         if (userData && userData.email) {
           setUserLogged(userData);
@@ -46,8 +44,9 @@ function Leaderboard() {
       try {
         const offset = (page - 1) * limit;
         const res = await fetch(
-          `https://react-reaction-time-test.onrender.com/api/leaderboard?limit=${limit}&offset=${offset}`
+          `/api/leaderboard?limit=${limit}&offset=${offset}`
         );
+        if (!res.ok) throw new Error("Errore risposta API");
         const data = await res.json();
         setUsers(data.users);
         setTotal(data.total);
@@ -79,9 +78,8 @@ function Leaderboard() {
       if (userLogged === null) return;
       if (userLogged.best_score === null) return; // Non ha ancora giocato
       try {
-        const res = await fetch(
-          `https://react-reaction-time-test.onrender.com/api/my-position?email=${userLogged.email}`
-        );
+        const res = await fetch(`/api/my-position?email=${userLogged.email}`);
+        if (!res.ok) throw new Error("Errore risposta API");
         const data = await res.json();
         if (data.position) {
           const myPage = Math.ceil(data.position / limit);
