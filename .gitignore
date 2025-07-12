@@ -4,9 +4,7 @@ client/node_modules/
 server/node_modules/
 
 # 🏗️ Ignora build e dist
-build/
 dist/
-client/build/
 server/build/
 
 # 🔐 Ignora variabili ambientali
