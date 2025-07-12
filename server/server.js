@@ -47,8 +47,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
-      secure: false, // su HTTPS metti true
     },
   })
 );
@@ -57,6 +58,16 @@ app.use(passport.session());
 // Usa le tue route API
 app.use("/api", apiRoutes);
 // Route di base
+
+app.use((req, res, next) => {
+  if (
+    process.env.NODE_ENV === "production" &&
+    req.headers["x-forwarded-proto"] !== "https"
+  ) {
+    return res.redirect("https://" + req.headers.host + req.url);
+  }
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World from Express Backend!");
