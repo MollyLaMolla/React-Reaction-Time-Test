@@ -7,6 +7,7 @@ import db from "./db/db.js"; // Assicurati di avere il tuo database configurato 
 import apiRoutes from "./routes/api.js"; // Assicurati di avere le tue rotte API configurate correttamente
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
+import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
