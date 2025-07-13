@@ -28,10 +28,6 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
 
 app.use(
   cors({
@@ -54,9 +50,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-// Usa le tue route API
-app.use("/api", apiRoutes);
-// Route di base
 
 app.use((req, res, next) => {
   if (
@@ -118,11 +111,20 @@ app.get(
       secure: false, // true in produzione con HTTPS
     });
 
-    res.redirect(
-      `https://react-reaction-time-test.onrender.com/username/setup`
-    );
+    res.redirect(`/username/setup`); // Reindirizza alla pagina di setup
   }
 );
+
+// 1️⃣ Rotte API
+app.use("/api", apiRoutes);
+
+// 2️⃣ Rotte statiche React
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+// 3️⃣ Fallback per React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server attivo su http://localhost:${PORT}`);
