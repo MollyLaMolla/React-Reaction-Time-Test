@@ -2,6 +2,7 @@ import "./LeaderBoard.css";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import UserBox from "../components/UserBox"; // Assicurati che il percorso sia corretto
 import GoogleLoginButton from "../components/GoogleLoginButton";
+import GoToGameButton from "../components/GoToGameButton";
 
 function Leaderboard() {
   const [users, setUsers] = useState([]);
@@ -244,6 +245,7 @@ function Leaderboard() {
         </div>
       )}
       {userLogged === null && !isLoadingUser && <GoogleLoginButton />}
+      <GoToGameButton user={userLogged} />
     </>
   );
 }
