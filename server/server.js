@@ -31,8 +31,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin:
-      process.env.CLIENT_URL || "https://react-reaction-time-test.onrender.com",
+    origin: true, // Permetti tutte le origini
     credentials: true, // ← essenziale per i cookie!
   })
 );
@@ -57,6 +56,13 @@ app.use((req, res, next) => {
     req.headers["x-forwarded-proto"] !== "https"
   ) {
     return res.redirect("https://" + req.headers.host + req.url);
+  }
+  next();
+});
+
+app.use((req, res, next) => {
+  if (req.url.startsWith("/api")) {
+    console.log(`🔎 Chiamata API: ${req.method} ${req.url}`);
   }
   next();
 });
