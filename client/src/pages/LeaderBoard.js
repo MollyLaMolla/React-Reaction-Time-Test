@@ -245,7 +245,7 @@ function Leaderboard() {
         </div>
       )}
       {userLogged === null && !isLoadingUser && <GoogleLoginButton />}
-      <GoToGameButton user={userLogged} />
+      {!isLoadingUser && <GoToGameButton user={userLogged} />}
     </>
   );
 }
