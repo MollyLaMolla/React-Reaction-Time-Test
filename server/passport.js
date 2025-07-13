@@ -2,6 +2,10 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import dotenv from "dotenv";
 dotenv.config({ path: "./.env" }); // Assicurati che il percorso sia corretto
+console.log(
+  "Google OAuth strategy loaded with client ID:",
+  process.env.GOOGLE_CLIENT_ID
+);
 passport.use(
   new GoogleStrategy(
     {
