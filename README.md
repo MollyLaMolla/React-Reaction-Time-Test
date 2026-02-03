@@ -1,32 +1,49 @@
-# Reaction Time Test
+# ⚡ Reaction Time Test
 
-Measure your reflexes, track your progress, and compete globally. Click when the screen turns green — fast, simple, and addictive.
+Measure your reflexes, track your progress, and climb the global leaderboard.  
+Click when the screen turns green — fast, simple, and addictive.
 
-## 🚀 Overview
+---
 
-This web app challenges users to click as quickly as possible when a red box turns green. The test runs for five rounds and calculates the average reaction time. Registered users can save their scores, track personal records, and compare themselves with thousands of players worldwide.
+## 🧠 Overview
 
-## 🔧 Features
+This web app challenges users to click as quickly as possible when a red box turns green.  
+Each test runs for **5 rounds**, calculating your average reaction time.
+
+Registered users can:
+
+- Save scores and track personal records
+- Create custom profiles with name, tag, and emoji avatar
+- View their global ranking and percentile
+- Compete with thousands of players worldwide
+
+---
+
+## 🔥 Features
 
 - ⚡ Reaction test with 5 rounds
-- 🔐 Authentication via Google or email/password
-- 🧑‍🎨 Custom user profiles: username, tag, emoji avatar
+- 🔐 Google or email/password authentication
+- 🧑‍🎨 Custom user profiles (username, tag, emoji avatar)
 - 📈 Real-time feedback: personal best, ranking, percentile
 - 🏆 Leaderboard with 1000+ realistic players
 - 🔁 Replay and improve your score anytime
 
-## 📊 Result Screen
+---
+
+## 📊 Result Screen Highlights
 
 After each test, users receive:
 
-- Average reaction time (ms)
-- Best and worst score of the session
-- Current global ranking (e.g. #141)
-- Percentile feedback (e.g. Top 13.94%)
-- Total number of players
-- Notification if a new personal record is achieved
+- **Average reaction time** (e.g. 194ms)
+- **Best and worst score** of the session
+- **Global ranking** (e.g. #141)
+- **Percentile feedback** (e.g. Top 13.94%)
+- **Total number of players**
+- Notification: “New record!” or “Keep trying!”
 
-## 🏁 Leaderboard
+---
+
+## 🏁 Leaderboard Structure
 
 - Displays top players with:
   - Username
@@ -37,7 +54,22 @@ After each test, users receive:
 - Navigation: First, Prev, Next, Last
 - Highlights your current position
 
-## 🧠 Tech Stack
+---
+
+## 🧪 Data Simulation
+
+Includes a custom algorithm that generated **1000 realistic fake users** with randomized:
+
+- Reaction times
+- Usernames
+- Tags
+- Emoji avatars
+
+The algorithm is scalable and can generate any number of users for leaderboard population and UX testing.
+
+---
+
+## 🛠️ Tech Stack
 
 **Frontend:**
 - React
@@ -54,23 +86,9 @@ After each test, users receive:
 - Firebase (Auth + Hosting)
 - Axios
 
-## 🧪 Data Simulation
+---
 
-Includes a custom algorithm that generated 1000 realistic fake users with randomized:
-
-- Reaction times
-- Usernames
-- Tags
-- Emoji avatars
-
-This populates the leaderboard with believable data for testing and UX validation. The algorithm is scalable and can generate any number of users.
-
-
-## 🌐 Live Demo
-
-# [Try it here](https://react-reaction-time-test.onrender.com)
-
-## 📦 Installation
+## 👊 Installation
 
 ```bash
 # Backend
@@ -82,4 +100,6 @@ npm start
 cd client
 npm install
 npm start
-
+```
+## 🌐 Live Demo
+[Try it here](https://react-reaction-time-test.onrender.com)
