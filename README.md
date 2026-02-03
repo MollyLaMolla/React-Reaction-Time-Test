@@ -65,6 +65,11 @@ Includes a custom algorithm that generated 1000 realistic fake users with random
 
 This populates the leaderboard with believable data for testing and UX validation. The algorithm is scalable and can generate any number of users.
 
+
+## 🌐 Live Demo
+
+# [Try it here](https://react-reaction-time-test.onrender.com)
+
 ## 📦 Installation
 
 ```bash
@@ -77,3 +82,4 @@ npm start
 cd client
 npm install
 npm start
+
