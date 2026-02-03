@@ -83,7 +83,6 @@ The algorithm is scalable and can generate any number of users for leaderboard p
 - PostgreSQL
 - Passport (Google OAuth)
 - JWT, Sessions
-- Firebase (Auth + Hosting)
 - Axios
 
 ---
